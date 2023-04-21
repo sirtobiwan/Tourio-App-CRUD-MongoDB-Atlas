@@ -24,12 +24,12 @@ const Label = styled.label`
   font-weight: bold;
 `;
 
-export default function Form({ onAddPlace, formName, defaultData }) {
+export default function Form({ onSubmit, formName, defaultData }) {
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    onAddPlace(data);
+    onSubmit(data);
   }
 
   return (
