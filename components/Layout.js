@@ -12,6 +12,13 @@ const Main = styled.main`
   width: 100%;
 `;
 
+const Title = styled.h1`
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin: 0;
+`;
+
 export default function Layout({ children }) {
   return (
     <>
@@ -19,7 +26,12 @@ export default function Layout({ children }) {
         <title>Tourio</title>
       </Head>
       <TitleBar />
-      <Main><Login/>{children}</Main>
+      <Main>
+        <Login />
+        <Title>Tourio App</Title>
+        {children}
+      </Main>
     </>
   );
 }
+
