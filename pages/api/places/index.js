@@ -1,5 +1,5 @@
 import dbConnect from "../../../db/connect";
-import Place from "../../../db/models/Place";
+import Place from "../../../db/models/Places";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "../auth/[...nextauth]";
 
