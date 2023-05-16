@@ -17,18 +17,21 @@ const Title = styled.h1`
   color: #333;
   text-align: center;
   margin: 0;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
 export default function Layout({ children }) {
   return (
     <>
       <Head>
-        <title>Tourio</title>
+      <Title>Tourio App</Title>
       </Head>
       <TitleBar />
       <Main>
         <Login />
-        <Title>Tourio App</Title>
         {children}
       </Main>
     </>
