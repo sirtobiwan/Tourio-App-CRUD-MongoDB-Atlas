@@ -16,8 +16,10 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 24px;
+  font-size: 16px;
   margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
 `;
 
 export default function Login() {
