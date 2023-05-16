@@ -3,38 +3,31 @@ import styled from "styled-components";
 import { useRouter } from "next/router";
 import Form from "../components/Form.js";
 import { StyledLink } from "../components/StyledLink.js";
-import useSWRMutation from "swr/mutation";
-import {useSession} from "next-auth/react"
-
+import { useSession } from "next-auth/react";
 const StyledBackLink = styled(StyledLink)`
   justify-self: flex-start;
 `;
-async function sendRequest(url, { arg }) {
-  const response = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(arg),
-  });
-
-  if (!response.ok) {
-    console.log(`Error: ${response.status}`);
-  }
-}
 
 export default function CreatePlacePage() {
-  const { trigger } = useSWRMutation("/api/places", sendRequest);
   const router = useRouter();
-  const{data: session, status} = useSession();
+  const { data: session, status } = useSession();
 
-  function addPlace(place) {
-    trigger(place);
-    router.push("/");
+  async function addPlace(place) {
+    const response = await fetch("/api/places", {
+      method: "POST",
+      body: JSON.stringify(place),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (response.ok) {
+      await response.json();
+      router.push("/");
+    } else {
+      console.error(`Error: ${response.status}`);
+    }
   }
-  if (status !== 'authenticated'){
-    return <h1>Access denied</h1>
-  }
+if (status !== 'authenticated'){return <h1>Access denied</h1>}
   return (
     <>
       <h2 id="add-place">Add Place</h2>
