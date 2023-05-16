@@ -6,12 +6,12 @@ const Headline = styled.h1`
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #f5f5f5;
+  background-color: #ebebeb;
   margin: 0;
   padding: 20px;
   text-align: center;
   z-index: 1;
-  border: 2px solid #333;
+  border: 4px solid #333;
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.08);
 `;
