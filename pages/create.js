@@ -27,7 +27,7 @@ export default function CreatePlacePage() {
       console.error(`Error: ${response.status}`);
     }
   }
-if (status !== 'authenticated'){return <h1>Access denied</h1>}
+if (status !== 'authenticated'){return <h1>Access denied - not signed in</h1>}
   return (
     <>
       <h2 id="add-place">Add Place</h2>

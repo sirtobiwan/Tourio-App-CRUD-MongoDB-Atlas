@@ -23,11 +23,16 @@ const FixedLink = styled(StyledLink)`
   bottom: 50px;
   right: 50px;
 `;
+
+const Container = styled.div`
+  padding: 20px;
+`;
+
 export default function Home() {
   const { data } = useSWR("/api/places", { fallbackData: [] });
   const { data: session } = useSession();
   return (
-    <>
+    <Container>
       <List role="list">
         {data.map((place) => {
           return (
@@ -46,6 +51,6 @@ export default function Home() {
         <Link href="/create" passHref legacyBehavior>
           <FixedLink>+ place</FixedLink>
         </Link>
-    </>
+        </Container>
   );
 }
