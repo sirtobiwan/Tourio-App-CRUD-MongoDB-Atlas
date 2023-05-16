@@ -12,23 +12,11 @@ const Main = styled.main`
   width: 100%;
 `;
 
-const Title = styled.h1`
-  font-size: 2rem;
-  color: #333;
-  text-align: center;
-  margin: 0;
-  padding: 10px;
-  border: 2px solid #333;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-`;
 
 export default function Layout({ children }) {
   return (
     <>
-      <Head>
-      <Title>Tourio App</Title>
-      </Head>
+      <Head/>
       <TitleBar />
       <Main>
         <Login />

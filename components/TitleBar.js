@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Headline = styled.h1`
+  color: #333;
   position: fixed;
   top: 0;
   left: 0;
@@ -10,8 +11,11 @@ const Headline = styled.h1`
   padding: 20px;
   text-align: center;
   z-index: 1;
+  border: 2px solid #333;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
 export default function TitleBar() {
-  return <Headline>Tourio</Headline>;
+  return <Headline>Tourio App</Headline>;
 }
