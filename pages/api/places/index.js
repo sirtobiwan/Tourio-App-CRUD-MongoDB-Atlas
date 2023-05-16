@@ -9,7 +9,7 @@ export default async function handler(request, response) {
   const session = await getServerSession(request, response, authOptions)
 
   if (request.method === "GET") {
-    const places = await Place.find({author: session.user.email}); //the object will only display places with author of user. Without object it will display all
+    const places = await Place.find(); //{author: session.user.email}the object will only display places with author of user. Without object it will display all
     return response.status(200).json(places);
   }
 
