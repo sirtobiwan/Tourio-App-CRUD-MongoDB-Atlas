@@ -42,11 +42,10 @@ export default function Home() {
           );
         })}
       </List>
-      {session && (
+      {/* //{session && ()} */}
         <Link href="/create" passHref legacyBehavior>
           <FixedLink>+ place</FixedLink>
         </Link>
-      )}
     </>
   );
 }
