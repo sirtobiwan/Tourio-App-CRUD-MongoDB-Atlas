@@ -6,7 +6,7 @@ const Headline = styled.h1`
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #ebebeb;
+  background-color: #FFE8CC;
   margin: 0;
   padding: 20px;
   text-align: center;
