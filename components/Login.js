@@ -11,7 +11,13 @@ const Button = styled.button`
 `;
 
 const Container = styled.div`
+  text-align: center;
   margin: 10px 0;
+`;
+
+const Title = styled.h1`
+  font-size: 24px;
+  margin-bottom: 10px;
 `;
 
 export default function Login() {
@@ -20,14 +26,14 @@ export default function Login() {
   if (session) {
     return (
       <Container>
-        Signed in as {session.user.name} <br />
+        <Title>Signed in as {session.user.name}</Title>
         <Button onClick={() => signOut()}>Sign out</Button>
       </Container>
     );
   }
   return (
     <Container>
-      Not signed in <br />
+      <Title>Not signed in</Title>
       <Button onClick={() => signIn()}>Sign in</Button>
     </Container>
   );
